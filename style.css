@@ -43,6 +43,7 @@ nav a{
     font-weight: medium;
     color: #8e8e8e;
 }
+
 .container{
     background-color: #8e8e8e;
     display: flex;
@@ -51,7 +52,7 @@ nav a{
 
 
 .container button{
-    background-color:white;
+    background-color:#3c3b3d;
     width: 100%;
     height: 3rem;
     cursor: pointer;
@@ -82,78 +83,88 @@ nav a{
     color: white;
     text-decoration: none;
 }
+.mobile-nav{
+    display: none;
+}
 
 /*News Section*/
-.banner-container {
+.news-container {
     display: grid;
     grid-template-columns: 3fr 2fr;
-    color: #3c3b3d;
+    color: var(--dark-grey);
 }
-.banner-left {
+
+/**** News left ****/
+
+.news-left {
     display: flex;
     flex-direction: column;
     padding: 2%;
 }
 
-.banner-left img {
+.news-left img {
     width: 100%;
 }
 
-.banner-left-info {
+.news-left-info {
     padding-bottom: 2%;
 }
 
-.banner-left-info h2,p {
+.news-left-info h2,p {
     padding: 2%;
 }
 
-.banner-left-info p {
+.news-left-info p {
     font-size: 80%;
 }
 
-.right {
+/**** News right ****/
+
+.news-right {
     display: flex;
     flex-direction: column;
 }
 
-.right img {
+.news-right img {
     width: 10rem;
 }
 
-.right h4 {
+.news-right h4 {
     font-size: 140%;
 }
 
-.right button{
+.news-right button{
     background: none;
     border: 0;
 }
 
-.right a{
+.news-right a{
     text-decoration: none;
 }
 
-.application, .campus, .guest {
+.orientation, .campus, .guest {
     display: flex;
-    border: 1px solid #8e8e8e;
+    border: 1px solid var(--lighter-grey);
     padding: 2%;
 }
 
-.application-info, .campus-info, .guest-info {
+.orientation-info, .campus-info, .guest-info {
    padding: 0 5%; 
    margin-top: 4%;
    font-size: 80%;
 }
 
-.application-info > *, .campus-info > *, .guest-info > * {
+.orientation-info > *, .campus-info > *, .guest-info > * {
     padding: 2% 0;
  }
 
 .guest {
-    background-color: #8e8e8e;
+    background-color: var(--lighter-grey);
     margin: 0 0 2% 0;
 }
-application-left-mobile, .campus-left-mobile, .guest-left-mobile {
+
+/**** Hide mobile images ****/
+.orientation-left-mobile, .campus-left-mobile, .guest-left-mobile {
     display: none;
 }
 
@@ -207,7 +218,9 @@ application-left-mobile, .campus-left-mobile, .guest-left-mobile {
     display: grid;
     grid-template-columns: 3fr 2fr;
 }
-
+.sl-mobile{
+    display: none;
+}
 
 /**** Urban container ****/
 .urban-container {
@@ -291,6 +304,117 @@ footer li {
     padding: 0 1em;
 }
 
+/*Mobile Response*/
+@media only screen and (max-width: 580px) {
+    /* Navigation bar */
+    nav > .logo, nav > ul {
+        display: none;
+    }
+
+    .mobile-nav {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        align-items: center;
+        grid-gap: 70%;
+        margin: 2% 3%;
+    }
+
+    /* Hero section */
+    .hero-container {
+        flex-direction: column;
+        padding: 0 0 5% 0;
+    }
+
+    .hero-container img {
+        width: 100%;
+    }
+
+    .hero-right button {
+        background-color: var(--light-grey);
+        border: none;
+        font-size: 100%;
+    } 
+
+    /* News section */
+    .news-left {
+        display: none;
+    }
+
+    .news-container {
+        grid-template-columns: 1fr;
+    }
+
+    .news-right > * {
+        display: flex;
+        flex-direction: column;
+        font-size: 120%;
+    }
+
+    .orientation-left-desktop, .campus-left-desktop, .guest-left-desktop {
+        display: none;
+    }
+
+    .news-right img {
+        width: 100%;
+    }
+
+    .orientation-left-mobile, .campus-left-mobile, .guest-left-mobile {
+        display: inline;
+    }
+
+    .guest {
+        background-color: white;
+    }
+
+    /* Start learning section */
+    .sl-container {
+        background-color: white;
+    }
+
+    .sl-grid-wrapper {
+        display: none;
+    }
+
+    .sl-mobile {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sl-mobile > * {
+        background-color: var(--lightest-grey);
+        color: var(--dark-grey);
+        height: 5rem;
+        margin: 1%;
+        text-decoration: none;
+    }
+
+    .sl-mobile h1 {
+        padding: 5%;
+    }
+
+    /* Thesis exhibit section */
+    .urban-info, .other-thesis-container {
+        display: none;
+    }
+
+    .thesis-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Footer section */
+    footer {
+        padding: 10% 0 2%;
+    }
+
+    footer ul {
+        display: none;
+    }
+
+    footer p {
+        font-size: 100%;
+    }
+    
+}
 
 
 
