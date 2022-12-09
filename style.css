@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
 }
-
+/*Nav Bar*/
 nav{
     display: flex;
     justify-content: space-between;
@@ -153,9 +153,9 @@ nav a{
     background-color: #8e8e8e;
     margin: 0 0 2% 0;
 }
-/*application-left-mobile, .campus-left-mobile, .guest-left-mobile {
+application-left-mobile, .campus-left-mobile, .guest-left-mobile {
     display: none;
-}*/
+}
 
 /*Start learning Section*/
 .c1-container{
